@@ -107,3 +107,15 @@ def initialize_matrix(n,m):
     for i in range(0,n):
         array[i] = initialize_vector(m)
     return array
+
+def cyclic_permutations(num):
+    array = num_to_array(num)
+
+    out = []
+    for i in range(0, len(array)):
+        curr = array_to_num(array[i:len(array)] + array[0:i])
+        out.append(curr)
+
+    return out
+
+

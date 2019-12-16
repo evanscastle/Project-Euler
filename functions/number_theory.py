@@ -94,6 +94,16 @@ def proper_divisors(num):
     array.pop()
     return array
 
+#sum proper divisors, -1 if deficient, 0 if perfect, 1 if abundant
+def abundant_or_deficient(num):
+    divisors = proper_divisors(num)
+    if sum(divisors) < num:
+        return -1
+    if sum(divisors) == num:
+        return 0
+    if sum(divisors) > num:
+        return 1
+
 #returns the prime factorization of a number
 #AT SOME POINT MAKE A RECURSIVE VERSION WITH TREES
 def factor(num):
